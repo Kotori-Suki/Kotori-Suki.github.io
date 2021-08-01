@@ -1,0 +1,787 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/10nlife/10nlife.github.io/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/10nlife/10nlife.github.io/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="大大大大前端" href="https://github.com/10nlife/10nlife.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="大大大大前端" href="https://github.com/10nlife/10nlife.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="大大大大前端" href="https://github.com/10nlife/10nlife.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/10nlife/10nlife.github.io/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="前端 javascript" />
+
+
+<link rel="canonical" href="https://github.com/10nlife/10nlife.github.io/2021/07/31/javascript/ES6-11%E7%9F%A5%E8%AF%86%E5%97%B7/">
+
+
+
+  <title>
+ES6-11知识嗷 - javascript |
+大大大大前端 = 前端很大，我要忍一下</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">ES6-11知识嗷
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-07-31 19:09:31">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-07-31T19:09:31+08:00">2021-07-31</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/10nlife/10nlife.github.io/" rel="start">大大大大前端</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciusoyjnj219g0u0x56.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/10nlife/10nlife.github.io/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/10nlife/10nlife.github.io/categories/javascript/" itemprop="item" rel="index" title="分类于 javascript"><span itemprop="name">javascript</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://github.com/10nlife/10nlife.github.io/2021/07/31/javascript/ES6-11%E7%9F%A5%E8%AF%86%E5%97%B7/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/10nlife/10nlife.github.io/images/avatar.jpg">
+    <meta itemprop="name" content="10nlife">
+    <meta itemprop="description" content="前端很大，我要忍一下, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="大大大大前端">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="es6"><a class="anchor" href="#es6">#</a> ES6</h2>
+<h6 id="1-let"><a class="anchor" href="#1-let">#</a> 1. let</h6>
+<p>let 用来变量声明</p>
+<p>特性：1. 变量不能重复声明  2. 块级作用域  3. 不会变量提升</p>
+<h6 id="2-const"><a class="anchor" href="#2-const">#</a> 2. const</h6>
+<p>const 用来声明常量</p>
+<p>特性：1. 一定要有初始值  2. 值不能修改  3. 块级作用域  4. 对于数组或者对象的修改不算对常量的修改，不会报错</p>
+<h6 id="3-变量的结构赋值"><a class="anchor" href="#3-变量的结构赋值">#</a> 3. 变量的结构赋值</h6>
+<ul>
+<li>
+<p>ES6 允许按照一定模式从数组和对象中提取值，对变量进行复制</p>
+<ul>
+<li>
+<p>数组的结构</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> XXX = [<span class="string">&#x27;xx&#x27;</span>,<span class="string">&#x27;yy&#x27;</span>,<span class="string">&#x27;zz&#x27;</span>]</span><br><span class="line"><span class="keyword">let</span> [x,y,z] = XXX</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>对象的结构</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> zhao = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>:<span class="number">18</span>,</span><br><span class="line">    <span class="attr">say</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123;say&#125; = zhao</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="4-模板字符串"><a class="anchor" href="#4-模板字符串">#</a> 4. 模板字符串</h6>
+<p>新的字符串方式，用 `` 声明</p>
+<p>特性：1. 内容中可以直接出现换行符  2. 用 <code>$&#123;&#125;</code>  直接进行变量拼接</p>
+<h6 id="5-对象的简化写法"><a class="anchor" href="#5-对象的简化写法">#</a> 5. 对象的简化写法</h6>
+<p>ES6 允许在大括号里面，直接写入变量和函数，作为对象的属性和方法</p>
+<h6 id="6-箭头函数"><a class="anchor" href="#6-箭头函数">#</a> 6. 箭头函数</h6>
+<p>ES6 允许使用箭头来定义函数</p>
+<p>特性：1.this 是静态的，始终指向函数声明式所在的作用域下的 this 值  2. 不能作为构造函数实例化对象  3. 不能使用 arguments 变量</p>
+<p>适用场景：与 this 无关的回调，定时器，数组的方法回调</p>
+<p>不适用场景：与 this 有关的回调，事件回调，对象的方法</p>
+<h6 id="7-函数参数的默认值"><a class="anchor" href="#7-函数参数的默认值">#</a> 7. 函数参数的默认值</h6>
+<p>ES6 允许参数赋初始值</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果不给c赋值，那么c就会等于初始值10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params">a,b,c=<span class="number">10</span></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="8rest参数"><a class="anchor" href="#8rest参数">#</a> 8.rest 参数</h6>
+<p>ES6 引入 rest 参数，用于获取函数的实参，用来代替 argument</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">date</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(args) <span class="comment">// args是一个装剩余参数的数组，可以使用数组方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="9扩展运算符"><a class="anchor" href="#9扩展运算符">#</a> 9. 扩展运算符</h6>
+<p>... 扩展运算符能将数组转换为逗号分隔的参数序列</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xxx = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="built_in">console</span>.log(...xxx)    <span class="comment">// 1,2,3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> xxx = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(...xxx)  <span class="comment">// name:&#x27;xxx&#x27;, age:18</span></span><br></pre></td></tr></table></figure></p>
+<p>与 rest 参数的区别：rest 参数是形参，只能放在函数声明的参数里，扩展运算符可以展开数组，对象，伪数组</p>
+<p>使用扩展运算符展开的元素是浅拷贝</p>
+<h6 id="10symbol"><a class="anchor" href="#10symbol">#</a> 10.Symbol</h6>
+<p>ES6 引入了一种新的原始数据类型 Symbol，表示独一无二的值，他是 JavaScript 语言的第七种数据类型</p>
+<p>特点：1. Symbol 的值是唯一的，用来解决命名冲突的问题  2.Symbol 值不能与其他数据进行运算  3.Symbol 定义的对象属性不能使用 for in 循环遍历，但是可以使用 Reflect.ownKeys 来获取对象的所有键名</p>
+<h6 id="11迭代器iterator"><a class="anchor" href="#11迭代器iterator">#</a> 11. 迭代器（Iterator）</h6>
+<p>迭代器是一种接口，为各种不同的数据结构提供了统一的访问机制，任何数据结构只要部署了 Iterator 接口，就可以完成遍历操作</p>
+<ul>
+<li>
+<p>ES6 创造了一种新的遍历命令 for...of 循环，Iterator 接口主要供 for...of 消费</p>
+<ul>
+<li>for of 保存的是键值，for in 保存的是键名</li>
+</ul>
+</li>
+<li>
+<p>原生具备 iterator 接口的数据（可用 for of 遍历）</p>
+<ol>
+<li>Array  2.Arguments  3.Set  4.Map  5.String  6.TypeArray  7.NodeList</li>
+</ol>
+</li>
+<li>
+<p>工作原理</p>
+<ul>
+<li>创建一个指针对象，指向当前数据结构的起始位置</li>
+<li>第一次调用对象的 next 方法，指针自动指向数据结构的第一个成员</li>
+<li>接下来不断调用 next 方法，调用一直往后移动，直到指向最后一个成员</li>
+<li>每调用 next 方法返回一个包含 value 和 done 属性的对象</li>
+</ul>
+</li>
+<li>
+<p>场景：自定义遍历数据</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">    <span class="attr">stus</span>:[<span class="string">&#x27;xxx&#x27;</span>,<span class="string">&#x27;yyy&#x27;</span>,<span class="string">&#x27;zzz&#x27;</span>,<span class="string">&#x27;aaa&#x27;</span>],</span><br><span class="line">    <span class="comment">// 开启一个迭代器，来自定义遍历数据</span></span><br><span class="line">    [<span class="built_in">Symbol</span>.iterator]()&#123;</span><br><span class="line">        <span class="keyword">let</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="attr">next</span>:<span class="function">() =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span>(index &lt; <span class="built_in">this</span>.stus.length)&#123;</span><br><span class="line">                    <span class="keyword">const</span> res = &#123;<span class="attr">value</span>: <span class="built_in">this</span>.stus[index], <span class="attr">done</span>:<span class="literal">false</span>&#125;</span><br><span class="line">                    index++</span><br><span class="line">                    <span class="keyword">return</span> result</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> &#123;<span class="attr">value</span>:<span class="literal">undefined</span>, <span class="attr">done</span>:<span class="literal">true</span>&#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<h6 id="12生成器"><a class="anchor" href="#12生成器">#</a> 12. 生成器</h6>
+<p>生成器是 ES6 提供的一种异步编程方式，语法行为与传统的函数完全不同</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> * <span class="title">gen</span>(<span class="params"></span>)</span>&#123;		<span class="comment">// 生成器是一个特殊的函数</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">111</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">&#x27;xxxx&#x27;</span>		<span class="comment">// yield算是函数代码的分隔符，每掉一次next就会执行到一个yield的位置</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">222</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">&#x27;xxxx&#x27;</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">333</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">&#x27;xxxx&#x27;</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">444</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>解决异步编程</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUsers</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> data = <span class="string">&#x27;用户数据&#x27;</span></span><br><span class="line">        iterator.next(data)</span><br><span class="line">    &#125;, <span class="number">1000</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getGoods</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> data = <span class="string">&#x27;商品数据&#x27;</span></span><br><span class="line">        iterator.next(data)</span><br><span class="line">    &#125;, <span class="number">1000</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getOrders</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> data = <span class="string">&#x27;订单数据&#x27;</span></span><br><span class="line">        iterator.next(data)</span><br><span class="line">    &#125;, <span class="number">1000</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> * <span class="title">gen</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> users = <span class="keyword">yield</span> getUsers();</span><br><span class="line">    <span class="built_in">console</span>.log(users)</span><br><span class="line">    <span class="keyword">let</span> orders = <span class="keyword">yield</span> getOrders();</span><br><span class="line">    <span class="built_in">console</span>.log(orders)</span><br><span class="line">    <span class="keyword">let</span> goods = <span class="keyword">yield</span> getGoods();</span><br><span class="line">    <span class="built_in">console</span>.log(goods)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> iterator = gen()</span><br><span class="line">iterator.next()</span><br></pre></td></tr></table></figure></p>
+<h6 id="13promise"><a class="anchor" href="#13promise">#</a> 13.Promise</h6>
+<p>Promise 是 ES6 引入的异步编程的新解决方法，语法上 Promise 是一个构造函数，用来封装异步操作并可以获取其成功或失败的结果</p>
+<p>callback hell：</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过回调的方式来保证异步函数的执行顺序,但会陷入回调地狱</span></span><br><span class="line">fs.readFile(<span class="string">&#x27;/data/a.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(err) &#123;</span><br><span class="line">        <span class="keyword">throw</span> err </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">    fs.readFile(<span class="string">&#x27;/data/b.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>)=&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(err) &#123;</span><br><span class="line">            <span class="keyword">throw</span> err</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(data)</span><br><span class="line">        fs.readFile(<span class="string">&#x27;/data/c.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>)=&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(err) &#123;</span><br><span class="line">                <span class="keyword">throw</span> err</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">console</span>.log(data)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>为了解决以上编码方式带来的问题（回调地狱嵌套），所以在 ES6 中新增了一个 API： <code>promise</code></p>
+<ul>
+<li>Promise 的英文就是保证，承诺的意思</li>
+<li>Promise 容器中存放了一个任务</li>
+<li>有三种状态，Pending, Resolved, Rejected, 成功了状态就从 Pending -&gt; Resolved，失败了就从 Pending -&gt; Rejected</li>
+</ul>
+<p>创建一个 Promise 容器</p>
+<ul>
+<li>promise 容器一旦创建，就开始执行里面的代码</li>
+</ul>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 这是一个异步任务</span></span><br><span class="line">    fs.readFile(<span class="string">&#x27;/data/a.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(err) &#123;</span><br><span class="line">            <span class="comment">// 失败了，承诺容器中的任务失败了</span></span><br><span class="line">            <span class="comment">// 把容器的Pending状态改成Rejected</span></span><br><span class="line">            <span class="comment">// 这里调用的resolve调用的第二个function</span></span><br><span class="line">            reject(err)</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 承诺容器的任务成功了</span></span><br><span class="line">            <span class="comment">// 把容器的Pending状态改成Resolve</span></span><br><span class="line">            <span class="comment">// 这里调用的resolve调用的第一个function</span></span><br><span class="line">            resolve(data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当p1成功了，然后可以调用then做指定的动作</span></span><br><span class="line"><span class="comment">// then方法接收的function就是容器中的resolve</span></span><br><span class="line">p1.then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;,<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>解决异步编程嵌套问题</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    fs.readFile(<span class="string">&#x27;/data/a.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(err) &#123;</span><br><span class="line">            reject(err)</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            resolve(data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    fs.readFile(<span class="string">&#x27;/data/b.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(err) &#123;</span><br><span class="line">            reject(err)</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            resolve(data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">p1.then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">    <span class="comment">// 当前函数中 return 的结果就可以在后面的then中function 接收到（return 什么接收到就是什么，没有就会收到undefined）</span></span><br><span class="line">    <span class="comment">// 当return 一个Promise对象的时候，后面的then中的方法的第一个参数会作为p2 的resolve方法来调用</span></span><br><span class="line">    <span class="keyword">return</span> p2</span><br><span class="line">&#125;,<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;,<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>Promise 的 catch 方法</p>
+<p>catch 方法算是 then 方法的一个语法糖，只能指定失败的回调</p>
+<h6 id="14set"><a class="anchor" href="#14set">#</a> 14.Set</h6>
+<p>ES6 提供了新的数据结构 Set（集合），它类似于数组，但成员的值都是唯一的，集合实现了 iterator 接口，所以可以使用扩展运算符和 for of 进行遍历</p>
+<p>声明 Set：let s = new Set ([])	可传入一个可迭代对象</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">&#x27;xx&#x27;</span>,<span class="string">&#x27;yy&#x27;</span>,<span class="string">&#x27;zz&#x27;</span>,<span class="string">&#x27;aa&#x27;</span>,<span class="string">&#x27;xx&#x27;</span>])  <span class="comment">// &#123;&#x27;xx&#x27;,&#x27;yy&#x27;,&#x27;zz&#x27;,&#x27;aa&#x27;&#125;,Set会自动去重</span></span><br></pre></td></tr></table></figure></p>
+<p>api:</p>
+<ul>
+<li>size   元素个数，是一个属性</li>
+<li>add ()    添加新的元素</li>
+<li>delete ()    删除一个元素</li>
+<li>clear ()    清空集合</li>
+</ul>
+<h6 id="15-map"><a class="anchor" href="#15-map">#</a> 15. Map</h6>
+<p>ES6 提供了 Map 数据结构，他类似于对象，也是键值对的集合，但是键的范围不限于字符串，各种类型的值（包括对象）都可以当作键，Map 也实现了 iterator 接口，可以使用扩展运算符和 for of 进行遍历</p>
+<p>声明：let m = new Map ()</p>
+<p>api:</p>
+<ul>
+<li>size   元素个数，是一个属性</li>
+<li>set (key, value)    添加一个键值对，key 可以是任意数据类型</li>
+<li>delete (map.get (key))     删除一个元素</li>
+<li>clear ()    清空 Map</li>
+</ul>
+<h6 id="16class类"><a class="anchor" href="#16class类">#</a> 16.class 类</h6>
+<p>ES6 提供了更接近传统语言的写法，引入 Class 类这个概念，作为对象的模板，通过 Class 关键字，可以定义类，ES6 的 class 可以看作一个语法糖，他的绝大部分功能，ES5 都可以做到，新的 class 写法只是让对象原型的写法更加清晰，更像面向对象的写法而已</p>
+<p>使用 class 关键字来声明类	 <code>class Phone&#123;&#125;</code></p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Phone</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">custructor</span>(<span class="params">brand, price</span>)</span> &#123;	<span class="comment">// 构造器</span></span><br><span class="line">        <span class="built_in">this</span>.brand = brand</span><br><span class="line">        <span class="built_in">this</span>.price = price</span><br><span class="line">    &#125;</span><br><span class="line">    call ()&#123;&#125;	<span class="comment">// 定义方法，只能使用es6的语法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用 static 关键字来声明类里面的静态成员，静态成员只有类内部能够访问，实例对象无法访问静态成员</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Phone</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> name = <span class="string">&#x27;手机&#x27;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="title">change</span>(<span class="params"></span>)</span> &#123;&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>es6 类的继承</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Parent</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">custructor</span>(<span class="params">brand, price, color, size</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">super</span>(bradn, price)		<span class="comment">// 相当有调用了父类的构造函数 ==&gt; Phone.call(this, brand, price)</span></span><br><span class="line">        <span class="built_in">this</span>.color = color</span><br><span class="line">        <span class="built_in">this</span>.size = size</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="function"><span class="title">photo</span>(<span class="params"></span>)</span> &#123;&#125;</span><br><span class="line">    <span class="function"><span class="title">playGanme</span>(<span class="params"></span>)</span> &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>继承之后 父类的方法会在子类的原型链上</p>
+<p>子类可以对父类方法的重写，重写同名方法后，实例对象调用方法会是子类的方法</p>
+<p>class 种 getter 和 setter 的设置</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Phone</span></span>&#123;</span><br><span class="line">    <span class="keyword">get</span> <span class="title">price</span>()&#123;	<span class="comment">// 当price属性被读取时会自动调用getter</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;price属性被读取了&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span> <span class="title">price</span>(<span class="params">newVal</span>)&#123;	<span class="comment">// 当price属性被修改时会自动调用setter</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;price属性被修改了，修改成了&#x27;</span> + newVal)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="17-数值扩展"><a class="anchor" href="#17-数值扩展">#</a> 17. 数值扩展</h6>
+<ul>
+<li>
+<p>Number.EPSILON 是 JS 表示的最小精度， 接近 2.22E-16，可以实现小数的运算精度问题</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在JS中，小数运算 0.1 + 0.2 !== 0.3</span></span><br><span class="line"><span class="comment">// 我们可以定义一个方法，如果两个数差值 &lt; number.EPSILON的话，我们就认为他是相等的</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">equal</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(a-b) &lt; <span class="built_in">Number</span>.EPSILON) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>进制</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二进制0b开头，八进制0o开头，十六进制0x开头</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">0b1010</span> <span class="comment">// 10</span></span><br><span class="line"><span class="keyword">let</span> o = <span class="number">0o777</span>  <span class="comment">// 511</span></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">0xff</span>   <span class="comment">// 255</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>Number.isFinite 用于检测一个数是不是有限数</p>
+</li>
+<li>
+<p>Number.isNaN 用于检测一个数值是否为 NaN</p>
+</li>
+<li>
+<p>Number.parseInt  Number.parseFloat  字符串转整数</p>
+</li>
+<li>
+<p>Number.isInteger  用于检测一个数值是不是整数</p>
+</li>
+<li>
+<p>Number.trunc 用于把数字的小数部分抹掉</p>
+</li>
+<li>
+<p>Number.sign 用于判断一个数到底是正数 负数 还是 0  正数返回 1 0 返回 0 负数返回 - 1</p>
+</li>
+</ul>
+<h6 id="18对象方法扩展"><a class="anchor" href="#18对象方法扩展">#</a> 18. 对象方法扩展</h6>
+<ul>
+<li>
+<p><span class="exturl" data-url="aHR0cDovL09iamVjdC5pcw==">Object.is</span>  判断两个值是否相等	该方法判断 NaN 和 NaN，返回 true</p>
+</li>
+<li>
+<p>Object.assign   对象的合并</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    <span class="attr">host</span>: <span class="string">&#x27;localhost&#x27;</span>,</span><br><span class="line">    <span class="attr">port</span>: <span class="number">3306</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    <span class="attr">pass</span>: <span class="string">&#x27;root&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> obj2 = &#123;</span><br><span class="line">    <span class="attr">host</span>: <span class="string">&#x27;http://atguigu.com&#x27;</span>,</span><br><span class="line">    <span class="attr">port</span>: <span class="number">33060</span>,</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;atguigu.com&#x27;</span>,</span><br><span class="line">    <span class="attr">pass</span>:<span class="string">&#x27;iloveyou&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.assign(obj, obj2))	<span class="comment">// 如果属性名不同则合并，要是一样就后者覆盖前者，合并的对象为浅拷贝</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>Object.setPrototypeOf  设置原型对象</p>
+</li>
+<li>
+<p>Object.getPrototypeOf  获取原型对象</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> school = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;尚硅谷&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> cities = &#123;</span><br><span class="line">    <span class="attr">city</span>: [<span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;上海&#x27;</span>, <span class="string">&#x27;深圳&#x27;</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Object</span>.setPrototypeOf(school, cities) <span class="comment">// 给school设置原型对象</span></span><br><span class="line"><span class="built_in">console</span>.log(school)</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<h6 id="19-es6模块化"><a class="anchor" href="#19-es6模块化">#</a> 19. ES6 模块化</h6>
+<ul>
+<li>
+<p>指将一个大的程序文件，拆分成许多小的文件，然后将小文件组合起来</p>
+</li>
+<li>
+<p>好处：1. 防止命名冲突   2. 代码复用    3. 高维护性</p>
+</li>
+<li>
+<p>ES6 之前的模块化：</p>
+<ul>
+<li>CommonJS =&gt; Node.js</li>
+<li>AMD            =&gt; requireJS</li>
+<li>CMD            =&gt; sea.JS</li>
+</ul>
+</li>
+<li>
+<p>ES6 模块化语法：由两个命令构成：export 和 import</p>
+<ul>
+<li>export 用于规定模块的对外接口</li>
+<li>import 用于输入其他模块提供的功能</li>
+</ul>
+</li>
+<li>
+<p>模块中 3 种暴露方式： <code>1. export const xxx = 'xxx'  分别暴露    2.export &#123;&#125;  统一暴露   3. export default &#123;&#125;</code>    默认暴露</p>
+</li>
+<li>
+<p>模块中 3 种引入方法： <code>1. import * as m1  from 'xxx' 通用引入  2.import &#123;xx, yy&#125; from 'xxx'  结构赋值引入，针对分别暴露和统一暴露  3.import m3 from 'xxx'</code>    简便引入，针对默认暴露</p>
+</li>
+</ul>
+<h6 id="20proxy和reflect"><a class="anchor" href="#20proxy和reflect">#</a> 20.Proxy 和 Reflect</h6>
+<p>Proxy 即代理，可以代理数据（对象 / 数组 / 方法）提供 13 种方法拦截数据（Object.defineProperty 只有两种方法）</p>
+<p>Reflect 即反射，提供了 13 种方法反射数据，和 Proxy 一一对应</p>
+<p>Proxy 构造函数可传入两个参数</p>
+<ul>
+<li>target：目标对象</li>
+<li>handler：具体操作</li>
+</ul>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Proxy</span>(target, &#123;</span><br><span class="line">    <span class="comment">// 针对数据的拦截</span></span><br><span class="line">    get set has deleteProperty</span><br><span class="line">    <span class="comment">// 遍历的拦截</span></span><br><span class="line">    ownKeys</span><br><span class="line">    <span class="comment">// 属性描述器的拦截</span></span><br><span class="line">    getOwnPropertyDescriptor defineOwnProperty</span><br><span class="line">    <span class="comment">// 是否可以扩展</span></span><br><span class="line">    isExtensible preventExtensible</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="es7"><a class="anchor" href="#es7">#</a> ES7</h2>
+<h6 id="1数组includes方法"><a class="anchor" href="#1数组includes方法">#</a> 1. 数组 includes 方法</h6>
+<p>如果包含返回 true，不包含就返回 false</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mingzhu = [<span class="string">&#x27;西游记&#x27;</span>, <span class="string">&#x27;红楼梦&#x27;</span>, <span class="string">&#x27;三国演义&#x27;</span>, <span class="string">&#x27;水浒传&#x27;</span>]</span><br><span class="line"><span class="built_in">console</span>.log(mingzhu.includes(<span class="string">&#x27;西游记&#x27;</span>))  <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<h6 id="2幂运算"><a class="anchor" href="#2幂运算">#</a> 2. 幂运算 **</h6>
+<p>ES7 提供了幂运算符</p>
+<p>2 ** 10 = 1024 相当于 Math.pow (2, 10)</p>
+<h2 id="es8"><a class="anchor" href="#es8">#</a> ES8</h2>
+<h6 id="1async-和-await"><a class="anchor" href="#1async-和-await">#</a> 1.async 和 await</h6>
+<p>async 和 await 两种语法结合可以让异步代码像同步代码一样</p>
+<p>async 表达式</p>
+<p>在函数声明前面加上 async 修饰符来定义一个 async 函数，这个函数返回一个 Promise 对象，如果函数 return 一个字符串，则 async 返回一个成功的 promise，如果 throw Error，则 async 返回的就是一个失败的 promise，如果 return 一个 Promise 对象，那么 async 返回的就是这个 Promise 状态的值</p>
+<p>await 表达式</p>
+<p>await 要放在 async 里面，await 右侧的表达式一般为 promise 对象，await 返回的是 promise 成功的值，await 的 promise 失败了就会抛出异常，需要通过 try..catch 捕获处理</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendAJAX</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> x = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        x.open(<span class="string">&#x27;GET&#x27;</span>, url)</span><br><span class="line">        x.send()</span><br><span class="line">        x.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(x.readyState === <span class="number">4</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(x.status &gt;= <span class="number">200</span> &amp;&amp; x.status &lt; <span class="number">300</span>) &#123;</span><br><span class="line">                    resolve(x.response)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    reject(x.status)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 实现异步编程，类似于同步编程</span></span><br><span class="line">    <span class="keyword">let</span> result = <span class="keyword">await</span> sendAJAX(<span class="string">&#x27;url&#x27;</span>)</span><br><span class="line">    <span class="keyword">let</span> result = <span class="keyword">await</span> sendAJAX(<span class="string">&#x27;url2&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="2-对象方法扩展"><a class="anchor" href="#2-对象方法扩展">#</a> 2. 对象方法扩展</h6>
+<ul>
+<li>Object.values ()   返回一个给定对象的所有可枚举值的数组</li>
+<li>Object.entries ()   返回一个给定对象自身可遍历属性 [key, value] 数组</li>
+<li>Object.getOwnPropertyDescriptors ()    返回指定对象所有自身属性的描述对象（writable，configurable，enumerable）</li>
+</ul>
+<h2 id="es9"><a class="anchor" href="#es9">#</a> ES9</h2>
+<h6 id="1-对象的剩余参数和扩展运算符"><a class="anchor" href="#1-对象的剩余参数和扩展运算符">#</a> 1. 对象的剩余参数和扩展运算符</h6>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">connent</span>(<span class="params">&#123;host, port, ...user&#125;</span>)</span>&#123;  <span class="comment">// 剩余参数会存在user对象种</span></span><br><span class="line">    xxxx</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mangseng = &#123;...tianyinbo, ...jinzhongzhao, ...tianleipo, ...menglongbaiwei&#125; <span class="comment">// 里面四个对象会被展开到mangseng中去</span></span><br></pre></td></tr></table></figure></p>
+<h6 id="2正则扩展-命名捕获分组"><a class="anchor" href="#2正则扩展-命名捕获分组">#</a> 2. 正则扩展 - 命名捕获分组</h6>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正则命名捕获</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;&lt;a herf=&quot;www.baidu.com&quot;&gt;百度&lt;/a&gt;&#x27;</span></span><br><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/&lt;a href=&quot;(.*)&quot;&gt;(.*)&lt;\/a&gt;/</span>   <span class="comment">// 提取url和标签文本</span></span><br><span class="line"><span class="keyword">const</span> result = reg.exec(str)   <span class="comment">// 返回一个数组，0：匹配的字符串 1：捕获的第一位  2：捕获的第二位</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 正则命名捕获分组</span></span><br><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/&lt;a href=&quot;(?&lt;url&gt;.*)&quot;&gt;(?&lt;text&gt;.*)&lt;\/a&gt;/</span>   <span class="comment">// 使用?&lt;&gt;分组，值会存在group对象里面</span></span><br></pre></td></tr></table></figure></p>
+<h6 id="3正则扩展-反向断言"><a class="anchor" href="#3正则扩展-反向断言">#</a> 3. 正则扩展 - 反向断言</h6>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正则正向断言</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;JS5211314你知道吗555啦啦啦&#x27;</span></span><br><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/\d+(?=啦)/</span>    <span class="comment">// 匹配后面跟着啦字的数字字符串</span></span><br><span class="line"><span class="keyword">const</span> result = reg.exec(str)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正则反向断言</span></span><br><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/\(?&lt;=啦)d+/</span></span><br></pre></td></tr></table></figure></p>
+<h6 id="4dotall模式"><a class="anchor" href="#4dotall模式">#</a> 4.dotAll 模式</h6>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/&lt;li&gt;.*?&lt;a&gt;(.*?)&lt;\/a&gt;.*?&lt;p&gt;(.*?)&lt;\/p&gt;/g</span>s	<span class="comment">// 正则后面加一个s，表示dotAll模式，这是.就能匹配任意字符</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="es10"><a class="anchor" href="#es10">#</a> ES10</h2>
+<h6 id="1对象扩展方法"><a class="anchor" href="#1对象扩展方法">#</a> 1. 对象扩展方法</h6>
+<ul>
+<li>Object.fromEntries ()    将二位数组转换成为对象，是 Object.entries 的逆运算</li>
+</ul>
+<h6 id="2字符串扩展方法"><a class="anchor" href="#2字符串扩展方法">#</a> 2. 字符串扩展方法</h6>
+<ul>
+<li>trimStart  清除字符串左侧空白</li>
+<li>trimEnd  清除字符串右侧空白</li>
+</ul>
+<h6 id="3数组的扩展方法"><a class="anchor" href="#3数组的扩展方法">#</a> 3. 数组的扩展方法</h6>
+<ul>
+<li>flat  将多维数组转化为低维的数组</li>
+<li>flatMap  将多维数组转化为低维的数组在进行 map 操作</li>
+</ul>
+<h2 id="es11"><a class="anchor" href="#es11">#</a> ES11</h2>
+<h6 id="1私有属性"><a class="anchor" href="#1私有属性">#</a> 1. 私有属性</h6>
+<p>class 类里面定义私有属性，不能被实例访问，只能在类的内部用</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 私有属性</span></span><br><span class="line">    #age</span><br><span class="line">    #weight</span><br><span class="line">    <span class="function"><span class="title">custructor</span>(<span class="params">name, age, weight</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name</span><br><span class="line">        <span class="built_in">this</span>.#age = age</span><br><span class="line">        <span class="built_in">this</span>.#weight = weight</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="2promiseallsettled"><a class="anchor" href="#2promiseallsettled">#</a> 2.Promise.allSettled</h6>
+<p>接收一个 promise 数组参数</p>
+<p>返回的结果始终是成功的，值是数组里面所有 promise 执行的结果</p>
+<p>与 Promise.all 的区别</p>
+<ul>
+<li>Promise.allSettled 始终返回成功，all 要数组里大的 promise 的执行结果全部成功，才会返回成功，否则返回失败</li>
+<li>Promise.allSettled 返回数组里面 promise 的执行结果，all 要数组里的 promise 全部执行成功，才会返回全部的执行结果，否则返回失败的执行结果</li>
+</ul>
+<h6 id="3stringprototypematchall"><a class="anchor" href="#3stringprototypematchall">#</a> 3.String.prototype.matchAll</h6>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/&lt;li&gt;.*?&lt;a&gt;(.*?)&lt;\/a&gt;.*?&lt;p&gt;(.*?)&lt;\/p&gt;/g</span>s</span><br><span class="line"><span class="keyword">const</span> result = str.matchAll(reg)  <span class="comment">// 匹配全部符合reg的字符串，并存入一个数组里</span></span><br></pre></td></tr></table></figure></p>
+<h6 id="4可选链操作符"><a class="anchor" href="#4可选链操作符">#</a> 4. 可选链操作符</h6>
+<p>免去我们去层层判断有没有传入</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">config</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 之前的写法</span></span><br><span class="line">    <span class="keyword">const</span> dbHost = config &amp;&amp; config.db &amp;&amp; config.db.host</span><br><span class="line">    <span class="comment">// 可选链写法</span></span><br><span class="line">    <span class="keyword">const</span> dbHost = config?.db?.host</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="5动态import"><a class="anchor" href="#5动态import">#</a> 5. 动态 import</h6>
+<p>ES11 提供了 import 函数来进行动态引入，返回值是一个 promise 对象，成功就返回一个 module 对象（导出来的 module）</p>
+<p>不在页面加载时 import，等要调用的时候在 import，不影响加载的效率</p>
+<h6 id="6bigint"><a class="anchor" href="#6bigint">#</a> 6.Bigint</h6>
+<p>大整形   声明：let n = 521n     /        let n = BigInt (123)</p>
+<p>可以做大数值运算</p>
+<p>let max = Number.Max_SAFE_INTEGER;</p>
+<p>console.log (BigInt (max) + BigInt (2))    //  大整形只能和大整形运算，不能和原始类型运算</p>
+<h6 id="7绝对全局对象globalthis"><a class="anchor" href="#7绝对全局对象globalthis">#</a> 7. 绝对全局对象 globalThis</h6>
+<p>ES11 提供了绝对全局对象 globalThis 始终指向全局，浏览器指向 window，Node 指向 global</p>
+
+      <div class="tags">
+          <a href="/10nlife/10nlife.github.io/tags/%E5%89%8D%E7%AB%AF-javascript/" rel="tag"><i class="ic i-tag"></i> 前端 javascript</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-08-01 11:08:45" itemprop="dateModified" datetime="2021-08-01T11:08:45+08:00">2021-08-01</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/10nlife/10nlife.github.io/images/wechatpay.png" alt="10nlife 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/10nlife/10nlife.github.io/images/alipay.png" alt="10nlife 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/10nlife/10nlife.github.io/images/paypal.png" alt="10nlife 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>10nlife <i class="ic i-at"><em>@</em></i>大大大大前端
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://github.com/10nlife/10nlife.github.io/2021/07/31/javascript/ES6-11%E7%9F%A5%E8%AF%86%E5%97%B7/" title="ES6-11知识嗷">https://github.com/10nlife/10nlife.github.io/2021/07/31/javascript/ES6-11知识嗷/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/10nlife/10nlife.github.io/2021/07/31/node/node-js%E7%9F%A5%E8%AF%86%E7%AE%80%E6%98%93%E7%89%88%E5%97%B7/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicivghyooj20zk0m8dir.jpg" title="node.js知识简易版嗷">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> node</span>
+  <h3>node.js知识简易版嗷</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#es6"><span class="toc-number">1.</span> <span class="toc-text"> ES6</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-let"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text"> 1. let</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-const"><span class="toc-number">1.0.0.0.2.</span> <span class="toc-text"> 2. const</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E5%8F%98%E9%87%8F%E7%9A%84%E7%BB%93%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="toc-number">1.0.0.0.3.</span> <span class="toc-text"> 3. 变量的结构赋值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.0.0.0.4.</span> <span class="toc-text"> 4. 模板字符串</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E5%8C%96%E5%86%99%E6%B3%95"><span class="toc-number">1.0.0.0.5.</span> <span class="toc-text"> 5. 对象的简化写法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.0.0.6.</span> <span class="toc-text"> 6. 箭头函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#7-%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">1.0.0.0.7.</span> <span class="toc-text"> 7. 函数参数的默认值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#8rest%E5%8F%82%E6%95%B0"><span class="toc-number">1.0.0.0.8.</span> <span class="toc-text"> 8.rest 参数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#9%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.0.0.0.9.</span> <span class="toc-text"> 9. 扩展运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#10symbol"><span class="toc-number">1.0.0.0.10.</span> <span class="toc-text"> 10.Symbol</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#11%E8%BF%AD%E4%BB%A3%E5%99%A8iterator"><span class="toc-number">1.0.0.0.11.</span> <span class="toc-text"> 11. 迭代器（Iterator）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#12%E7%94%9F%E6%88%90%E5%99%A8"><span class="toc-number">1.0.0.0.12.</span> <span class="toc-text"> 12. 生成器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#13promise"><span class="toc-number">1.0.0.0.13.</span> <span class="toc-text"> 13.Promise</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#14set"><span class="toc-number">1.0.0.0.14.</span> <span class="toc-text"> 14.Set</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#15-map"><span class="toc-number">1.0.0.0.15.</span> <span class="toc-text"> 15. Map</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#16class%E7%B1%BB"><span class="toc-number">1.0.0.0.16.</span> <span class="toc-text"> 16.class 类</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#17-%E6%95%B0%E5%80%BC%E6%89%A9%E5%B1%95"><span class="toc-number">1.0.0.0.17.</span> <span class="toc-text"> 17. 数值扩展</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#18%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E6%89%A9%E5%B1%95"><span class="toc-number">1.0.0.0.18.</span> <span class="toc-text"> 18. 对象方法扩展</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#19-es6%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">1.0.0.0.19.</span> <span class="toc-text"> 19. ES6 模块化</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#20proxy%E5%92%8Creflect"><span class="toc-number">1.0.0.0.20.</span> <span class="toc-text"> 20.Proxy 和 Reflect</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es7"><span class="toc-number">2.</span> <span class="toc-text"> ES7</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1%E6%95%B0%E7%BB%84includes%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.0.0.1.</span> <span class="toc-text"> 1. 数组 includes 方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2%E5%B9%82%E8%BF%90%E7%AE%97"><span class="toc-number">2.0.0.0.2.</span> <span class="toc-text"> 2. 幂运算 **</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es8"><span class="toc-number">3.</span> <span class="toc-text"> ES8</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1async-%E5%92%8C-await"><span class="toc-number">3.0.0.0.1.</span> <span class="toc-text"> 1.async 和 await</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E6%89%A9%E5%B1%95"><span class="toc-number">3.0.0.0.2.</span> <span class="toc-text"> 2. 对象方法扩展</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es9"><span class="toc-number">4.</span> <span class="toc-text"> ES9</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0%E5%92%8C%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.0.0.0.1.</span> <span class="toc-text"> 1. 对象的剩余参数和扩展运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2%E6%AD%A3%E5%88%99%E6%89%A9%E5%B1%95-%E5%91%BD%E5%90%8D%E6%8D%95%E8%8E%B7%E5%88%86%E7%BB%84"><span class="toc-number">4.0.0.0.2.</span> <span class="toc-text"> 2. 正则扩展 - 命名捕获分组</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3%E6%AD%A3%E5%88%99%E6%89%A9%E5%B1%95-%E5%8F%8D%E5%90%91%E6%96%AD%E8%A8%80"><span class="toc-number">4.0.0.0.3.</span> <span class="toc-text"> 3. 正则扩展 - 反向断言</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4dotall%E6%A8%A1%E5%BC%8F"><span class="toc-number">4.0.0.0.4.</span> <span class="toc-text"> 4.dotAll 模式</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es10"><span class="toc-number">5.</span> <span class="toc-text"> ES10</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95"><span class="toc-number">5.0.0.0.1.</span> <span class="toc-text"> 1. 对象扩展方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95"><span class="toc-number">5.0.0.0.2.</span> <span class="toc-text"> 2. 字符串扩展方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95"><span class="toc-number">5.0.0.0.3.</span> <span class="toc-text"> 3. 数组的扩展方法</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es11"><span class="toc-number">6.</span> <span class="toc-text"> ES11</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7"><span class="toc-number">6.0.0.0.1.</span> <span class="toc-text"> 1. 私有属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2promiseallsettled"><span class="toc-number">6.0.0.0.2.</span> <span class="toc-text"> 2.Promise.allSettled</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3stringprototypematchall"><span class="toc-number">6.0.0.0.3.</span> <span class="toc-text"> 3.String.prototype.matchAll</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4%E5%8F%AF%E9%80%89%E9%93%BE%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">6.0.0.0.4.</span> <span class="toc-text"> 4. 可选链操作符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5%E5%8A%A8%E6%80%81import"><span class="toc-number">6.0.0.0.5.</span> <span class="toc-text"> 5. 动态 import</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6bigint"><span class="toc-number">6.0.0.0.6.</span> <span class="toc-text"> 6.Bigint</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#7%E7%BB%9D%E5%AF%B9%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1globalthis"><span class="toc-number">6.0.0.0.7.</span> <span class="toc-text"> 7. 绝对全局对象 globalThis</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/10nlife/10nlife.github.io/2021/07/31/javascript/ES6-11%E7%9F%A5%E8%AF%86%E5%97%B7/" rel="bookmark" title="ES6-11知识嗷">ES6-11知识嗷</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="10nlife"
+      data-src="/10nlife/10nlife.github.io/images/avatar.jpg">
+  <p class="name" itemprop="name">10nlife</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/10nlife/10nlife.github.io/archives/">
+        <span class="count">10</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/10nlife/10nlife.github.io/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/10nlife/10nlife.github.io/tags/">
+        <span class="count">5</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/yourname" title="https:&#x2F;&#x2F;github.com&#x2F;yourname" class="item github"><i class="ic i-github"></i></a>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/10nlife/10nlife.github.io/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/10nlife/10nlife.github.io/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/10nlife/10nlife.github.io/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/10nlife/10nlife.github.io/categories/base/" title="分类于 计算机基础">计算机基础</a>
+</div>
+
+    <span><a href="/10nlife/10nlife.github.io/2021/07/31/base/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E5%97%B7/" title="计算机网络">计算机网络</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/10nlife/10nlife.github.io/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/10nlife/10nlife.github.io/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-5/" title="vue全家桶知识嗷[5]">vue全家桶知识嗷[5]</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/10nlife/10nlife.github.io/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/10nlife/10nlife.github.io/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-1/" title="vue全家桶知识嗷[1]">vue全家桶知识嗷[1]</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/10nlife/10nlife.github.io/categories/javascript/" title="分类于 javascript">javascript</a>
+</div>
+
+    <span><a href="/10nlife/10nlife.github.io/2021/07/31/javascript/ES6-11%E7%9F%A5%E8%AF%86%E5%97%B7/" title="ES6-11知识嗷">ES6-11知识嗷</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/10nlife/10nlife.github.io/categories/webpack/" title="分类于 webpack">webpack</a>
+</div>
+
+    <span><a href="/10nlife/10nlife.github.io/2021/07/31/webpack/webpack%E7%9F%A5%E8%AF%86%E5%97%B7/" title="webpack知识嗷">webpack知识嗷</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/10nlife/10nlife.github.io/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/10nlife/10nlife.github.io/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-3/" title="vue全家桶知识嗷[3]">vue全家桶知识嗷[3]</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/10nlife/10nlife.github.io/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/10nlife/10nlife.github.io/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-0/" title="vue全家桶知识嗷[0]">vue全家桶知识嗷[0]</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/10nlife/10nlife.github.io/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/10nlife/10nlife.github.io/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-2/" title="vue全家桶知识嗷[2]">vue全家桶知识嗷[2]</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/10nlife/10nlife.github.io/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/10nlife/10nlife.github.io/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-4/" title="vue全家桶知识嗷[4]">vue全家桶知识嗷[4]</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/10nlife/10nlife.github.io/categories/node/" title="分类于 node">node</a>
+</div>
+
+    <span><a href="/10nlife/10nlife.github.io/2021/07/31/node/node-js%E7%9F%A5%E8%AF%86%E7%AE%80%E6%98%93%E7%89%88%E5%97%B7/" title="node.js知识简易版嗷">node.js知识简易版嗷</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">10nlife @ 大大大大前端</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/07/31/javascript/ES6-11知识嗷/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/10nlife/10nlife.github.io/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
