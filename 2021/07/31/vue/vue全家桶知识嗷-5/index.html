@@ -1,0 +1,894 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="大大大大前端" href="https://10nlife.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="大大大大前端" href="https://10nlife.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="大大大大前端" href="https://10nlife.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="前端 vue" />
+
+
+<link rel="canonical" href="https://10nlife.github.io/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-5/">
+
+
+
+  <title>
+vue全家桶知识嗷[5] - vue |
+大大大大前端 = 前端很大，我要忍一下</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">vue全家桶知识嗷[5]
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-07-31 18:57:17">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-07-31T18:57:17+08:00">2021-07-31</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">大大大大前端</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclil3m4ej20zk0m8tn8.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/vue/" itemprop="item" rel="index" title="分类于 vue"><span itemprop="name">vue</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://10nlife.github.io/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-5/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="10nlife">
+    <meta itemprop="description" content="前端很大，我要忍一下, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="大大大大前端">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="6-vue3"><a class="anchor" href="#6-vue3">#</a> 6. Vue3</h2>
+<h4 id="61-vue3带来了什么"><a class="anchor" href="#61-vue3带来了什么">#</a> 6.1 Vue3 带来了什么</h4>
+<ul>
+<li>性能提升
+<ol>
+<li>打包大小减少 41%</li>
+<li>初次渲染快 55%，更新渲染快 133%</li>
+<li>内存减少 54%</li>
+</ol>
+</li>
+<li>源码的升级
+<ol>
+<li>使用 Proxy 代替 defineProperty 实现响应式</li>
+<li>重写虚拟 DOM 的实现和 Tree-Shaking</li>
+</ol>
+</li>
+<li>拥抱 TypeScript
+<ol>
+<li>Vue3 可以更好的支持 TypeScript</li>
+</ol>
+</li>
+<li>新的特性
+<ol>
+<li>Composition API (组合 API)
+<ul>
+<li>setup 配置</li>
+<li>ref 与 reactive</li>
+<li>watch 和 watchEffect</li>
+<li>provide 与 inject</li>
+</ul>
+</li>
+<li>新的内置组件
+<ul>
+<li>Fragment  Teleport  Suspense</li>
+</ul>
+</li>
+<li>其他改变
+<ul>
+<li>新的生命周期钩子</li>
+<li>data 选项应该始终被声明为一个函数</li>
+<li>移除 keyCode 支持作为 v-on 的修饰符   （不支持 @keyup.13 的写法）</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="62-创建vue30工程"><a class="anchor" href="#62-创建vue30工程">#</a> 6.2 创建 Vue3.0 工程</h4>
+<h6 id="621-使用vue-cil创建"><a class="anchor" href="#621-使用vue-cil创建">#</a> 6.2.1 使用 vue-cil 创建</h6>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 查看@vue/cli版本，确保@vue/cli版本在4.5.0以上</span></span></span><br><span class="line">vue -- version</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 安装或者升级你的@vue/cli</span></span></span><br><span class="line">npm install -g @vue/cli</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 创建</span></span></span><br><span class="line">vue create vue_test</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 启动</span></span></span><br><span class="line">cd vue_test</span><br><span class="line">npm run serve</span><br></pre></td></tr></table></figure></p>
+<h6 id="622-使用vite创建"><a class="anchor" href="#622-使用vite创建">#</a> 6.2.2 使用 vite 创建</h6>
+<ul>
+<li>
+<p>vite 是什么？ ---- 下一代前端构建工具</p>
+</li>
+<li>
+<p>优势：</p>
+<ol>
+<li>开发环境中，无需打包操作，可以快速的冷启动</li>
+<li>轻量快速的热重载（HMR）</li>
+<li>真正的按需编译，不在等待整个应用编译完成</li>
+</ol>
+</li>
+<li>
+<p>创建工程</p>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 创建工程</span></span></span><br><span class="line">npm init vite-app &lt;peoject-name&gt;</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 进入项目工程</span></span></span><br><span class="line">cd &lt;project-name&gt;</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 安装依赖</span></span></span><br><span class="line">npm install</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 运行</span></span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<h4 id="63-分析工程结构改变"><a class="anchor" href="#63-分析工程结构改变">#</a> 6.3 分析工程结构 (改变)</h4>
+<ul>
+<li>main.js</li>
+</ul>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入的不再是Vue构造函数了，引入的是一个名为createApp的工厂函数</span></span><br><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span></span><br><span class="line"></span><br><span class="line">createApp(App).mount(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>App.vue  允许 template 标签里面不写根元素</li>
+</ul>
+<h4 id="64-常用的composition-api"><a class="anchor" href="#64-常用的composition-api">#</a> 6.4 常用的 Composition API</h4>
+<h6 id="641-拉开序幕的setup"><a class="anchor" href="#641-拉开序幕的setup">#</a> 6.4.1 拉开序幕的 setup</h6>
+<ul>
+<li>一个新的配置项，值为一个函数</li>
+<li>setup 是所有 Composition API（组合 API）“表演的舞台”</li>
+<li>组件中所用到的：数据，方法等等，均要配置在 setup 中</li>
+<li>setup 函数的两种返回值：
+<ol>
+<li>若返回一个对象，则对象中的属性，方法，在模板中均可以直接使用（重点）</li>
+<li>若返回一个渲染函数，则可以自定义渲染内容</li>
+</ol>
+</li>
+</ul>
+<p>注意：不推荐与 Vue2.x 配置混用，Vue2 配置中可以访问到 setup 的属性和方法，但 setup 不能访问 vue2 中的配置，如果发生重名，会以 setup 优先</p>
+<p>setup 不能是一个 async 函数，因为返回值不再是 return 的对象，而是一个 promise，模板看不到 return 对象的属性</p>
+<h6 id="642-ref函数"><a class="anchor" href="#642-ref函数">#</a> 6.4.2 ref 函数</h6>
+<ul>
+<li>作用：定义一个响应式的数据</li>
+<li>语法：const xxx = ref (initValue)
+<ol>
+<li>创建一个包含响应式数据的引用对象（reference 对象）</li>
+<li>JS 中操作数据：xxx.value</li>
+<li>模板中读取数据：不需要.value, 直接 <code>&#123;&#123;xxx&#125;&#125;</code></li>
+</ol>
+</li>
+<li>接收的数据可以是基本类型，也可以是对象类型</li>
+<li>基本类型的数据：响应式依然是靠 <code>Object.defineProperty()</code>  的 get 和 set 完成的</li>
+<li>对象类型的数据：内部求助了 Vue3.0 中的另外一个函数 ---reactive 函数</li>
+</ul>
+<h6 id="643-reactive函数"><a class="anchor" href="#643-reactive函数">#</a> 6.4.3 reactive 函数</h6>
+<ul>
+<li>作用：定义一个对象类型的响应式数据（基本类型不要用，基本类型用 ref 函数）</li>
+<li>语法：const 代理对象 = reactive (源对象) 接收一个对象（或数组），返回一个代理对象（Proxy 对象）</li>
+<li>reactive 定义的响应式数据是 “深层次” 的</li>
+<li>内部基于 ES6 的 Proxy 实现，通过代理对象操作源对象内部数据进行操作</li>
+</ul>
+<h6 id="643-4-reactive对比ref"><a class="anchor" href="#643-4-reactive对比ref">#</a> 6.4.3-4 reactive 对比 ref</h6>
+<ul>
+<li>从定义数据的角度对比：
+<ul>
+<li>ref 用来定义：基本数据类型</li>
+<li>reactive 用来定义：对象（或数组）类型数据</li>
+<li>ref 也可以定义对象类型数据，他内部会自动通过 reactive 转为代理对象</li>
+</ul>
+</li>
+<li>从原理角度对比：
+<ul>
+<li>ref 通过 Object.defineProperty () 的 get 和 set 来实现响应式（数据劫持）</li>
+<li>reactive 通过 Proxy 来实现响应式（数据劫持），并通过 Reflect 操作源对象内部的数据</li>
+</ul>
+</li>
+<li>从使用角度对比：
+<ul>
+<li>ref 定义的数据，操作数据需要.value，读取数据时模板中直接读取不需要.value</li>
+<li>reactive 定义的数据，操作数据与读取数据都不需要.value</li>
+</ul>
+</li>
+</ul>
+<h4 id="644-vue3中的响应式原理"><a class="anchor" href="#644-vue3中的响应式原理">#</a> 6.4.4 Vue3 中的响应式原理</h4>
+<ul>
+<li>
+<p>Vue2 的响应式</p>
+<ul>
+<li>
+<p>对象类型：通过 Object.defineProperty () 对属性的读取，修改进行拦截（数据劫持）</p>
+</li>
+<li>
+<p>数组类型：通过重写更新数组的一系列方法来实现拦截（对数组的变更方法进行了包裹）</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(data, <span class="string">&#x27;count&#x27;</span>, &#123;</span><br><span class="line">    <span class="function"><span class="title">get</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">set</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>存在问题：新增属性，删除属性，界面不会更新，直接通过下标修改数据，界面不会更新</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Vue3 的响应式</p>
+<ul>
+<li>通过 Proxy（代理）：拦截对象中任意属性的变化，包括属性值的读写，属性值的添加，属性值的删除等</li>
+<li>通过 Reflect（反射）：对被代理对象的属性进行操作</li>
+</ul>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Proxy</span>(data, &#123;</span><br><span class="line">    <span class="comment">// 拦截读取属性值</span></span><br><span class="line">    <span class="function"><span class="title">get</span>(<span class="params">target, props</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Reflect</span>.get(target, prop)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 拦截设置属性值或者添加属性值</span></span><br><span class="line">    <span class="function"><span class="title">set</span>(<span class="params">target, prop, value</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Reflect</span>.set(target, prop, value)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 拦截删除属性值</span></span><br><span class="line">    <span class="function"><span class="title">deleteProperty</span>(<span class="params">target, prop</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Reflect</span>.deleteProperty(target, prop)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<h6 id="645-setup执行时机和参数"><a class="anchor" href="#645-setup执行时机和参数">#</a> 6.4.5 setup 执行时机和参数</h6>
+<ul>
+<li>setup 的执行时机：在 beforeCreate 之前执行一次，this 是 undefined</li>
+<li>setup 参数：
+<ul>
+<li>props：值为对象，包含：组件外部传递过来，且组件内部声明接收的属性</li>
+<li>context：上下文对象
+<ol>
+<li>attrs：值为对象，包括：组件外部传递过来，但没有在 props 配置中生命的属性，相当于 vue2 的 this.$attrs</li>
+<li>slots：收到的插槽内容，相当于 vue2 的 this.$slots</li>
+<li>emit：发布自定义事件的函数，相当于 vue2 的 this.$emit</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="646-计算属性和监视"><a class="anchor" href="#646-计算属性和监视">#</a> 6.4.6 计算属性和监视</h6>
+<ul>
+<li>
+<p>computed 函数</p>
+<ul>
+<li>
+<p>与 Vue2 中的 computed 配置功能一致</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;computed&#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 计算属性简写</span></span><br><span class="line">    <span class="keyword">let</span> fullName = computed(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> person.firstName + <span class="string">&#x27;-&#x27;</span> + person.lastName</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 计算属性完整</span></span><br><span class="line">    <span class="keyword">let</span> fullName = computed(&#123;</span><br><span class="line">        <span class="function"><span class="title">get</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> person.firstName + <span class="string">&#x27;-&#x27;</span> + person.lastName</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="title">set</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">const</span> nameArr = value.split(<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            person.firstName = nameArr[<span class="number">0</span>]</span><br><span class="line">            person.lastName = nameArr[<span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+</li>
+<li>
+<p>watch 函数</p>
+<ul>
+<li>
+<p>与 Vue2 中的 watch 配置功能一致，注意：</p>
+<ol>
+<li>监视 reactive 定义的响应式数据是：oldValue 无法正确获取，强制开启了 deep</li>
+<li>监视 reactive 定义的响应式数据中的某个属性时：deep 配置有效</li>
+</ol>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 情况一 监视ref定义的响应式数据</span></span><br><span class="line">watch(sum, <span class="function">(<span class="params">newValue, oldValue</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;sum变化了&#x27;</span>, newValue, oldValue)</span><br><span class="line">&#125;, &#123;<span class="attr">immediate</span>: <span class="literal">true</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 情况二 监视多个ref定义的响应式数据</span></span><br><span class="line">watch([<span class="string">&#x27;sum&#x27;</span>, <span class="string">&#x27;name&#x27;</span>], <span class="function">(<span class="params">newValue, oldValue</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;sum或name变化了&#x27;</span>, newValue, oldValue)</span><br><span class="line">&#125;, &#123;<span class="attr">immediate</span>: <span class="literal">true</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 情况三 监视reactive定义的响应式数据(oldValue无法正确获取，deep配置无效)</span></span><br><span class="line">watch(person, <span class="function">(<span class="params">newValue, oldValue</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;person变化了&#x27;</span>, newValue, oldValue)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 情况四 监视reactive定义的响应式数据的某个属性(能正确获取oldValue,deep配置有效)</span></span><br><span class="line">watch(<span class="function">() =&gt;</span> person.name, <span class="function">(<span class="params">newValue, oldValue</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;person的name属性变化了&#x27;</span>, newValue, oldValue)</span><br><span class="line">&#125;, &#123;<span class="attr">immediate</span>:<span class="literal">true</span>, <span class="attr">deep</span>:<span class="literal">true</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//情况五 监视reactive定义的响应式数据的多个属性</span></span><br><span class="line">watch([<span class="function">() =&gt;</span> person.name, <span class="function">() =&gt;</span> person.age], <span class="function">(<span class="params">newValue, oldValue</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;person的name或者age变化了&#x27;</span>, newValue, oldValue)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//特殊情况 监视reactive定义的响应式数据里面的对象</span></span><br><span class="line">watch(<span class="function">() =&gt;</span> person.obj, <span class="function">(<span class="params">newValue, oldValue</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;person的job变化了&#x27;</span>, newValue, oldValue)</span><br><span class="line">&#125;,&#123;<span class="attr">deep</span>:<span class="literal">true</span>&#125;) <span class="comment">// 此处由于监视的时reactive定义的对象中的某个属性，所以deep配置有效</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="647-watcheffect函数"><a class="anchor" href="#647-watcheffect函数">#</a> 6.4.7 watchEffect 函数</h6>
+<ul>
+<li>watch 既要指明监视的属性，也要指明监视的回调</li>
+<li>watchEffect 不用指明监视的属性，监视的回调中用到哪个属性，那就监视哪个属性</li>
+<li>watchEffect 有点像 computed
+<ul>
+<li>computed 注重的计算出来的值（即返回值），所以必须写返回值</li>
+<li>watchEffect 注重的是过程（即函数体），可以不写返回值</li>
+</ul>
+</li>
+</ul>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// watchEffect所指定的回调中用到的数据只要发生变化，则重新执行回调</span></span><br><span class="line">watchEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> x1 = sum.value</span><br><span class="line">    <span class="keyword">const</span> x2 = person.age</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;watchEffect配置的回调执行了&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h6 id="648-vue3的生命周期"><a class="anchor" href="#648-vue3的生命周期">#</a> 6.4.8 Vue3 的生命周期</h6>
+<p>与 Vue2 的生命周期差不多，beforeDestory 和 destoryed 更名为 beforeUnmount 和 unmounted</p>
+<p>Vue3 提供了 Composition API 形式的生命周期钩子，与 Vue2.x 中的钩子对应关系如下</p>
+<ul>
+<li><code>beforeCreate</code>  ===&gt;  <code>setup()</code>   setup 就是 beforeCreate 和 created 的体现</li>
+<li><code>created</code>  ===&gt;  <code>setup()</code></li>
+<li><code>beforeMount</code>  ===&gt;  <code>onBeforeMount</code></li>
+<li><code>mounted</code>  ===&gt;  <code>onMounted</code></li>
+<li><code>beforeUpdate</code>  ===&gt;  <code>onBeforeUpdate</code></li>
+<li><code>updated</code>  ===&gt;  <code>onUpdated</code></li>
+<li><code>beforeUnmount</code>  ===&gt;  <code>onBeforeUnmount</code></li>
+<li><code>unmounted</code>  ===&gt;  <code>onUnmounted</code></li>
+</ul>
+<h6 id="649-自定义hook函数"><a class="anchor" href="#649-自定义hook函数">#</a> 6.4.9 自定义 hook 函数</h6>
+<ul>
+<li>本质：是一个函数，把 setup 函数中使用的 Composition API 进行了封装</li>
+<li>类似于 Vue 2.x 中的 mixin</li>
+<li>优势：复用代码，让 setup 中的逻辑更加清楚易懂</li>
+</ul>
+<h6 id="6410-toref"><a class="anchor" href="#6410-toref">#</a> 6.4.10 toRef</h6>
+<ul>
+<li>创建一个 ref 对象，其 value 值指向另一个对象的某个属性</li>
+<li>语法： <code>const name = toRef(person, 'name')</code></li>
+<li>应用：要将响应式对象中的某个属性单独提供给外部使用</li>
+<li>扩展：toRef 和 toRefs 功能一致，但可以批量创建多个 ref 对象，语法：toRefs (person)</li>
+</ul>
+<h4 id="65-其他composition-api"><a class="anchor" href="#65-其他composition-api">#</a> 6.5  其他 composition API</h4>
+<h6 id="651-shallowreactive-和-shallowref"><a class="anchor" href="#651-shallowreactive-和-shallowref">#</a> 6.5.1 shallowReactive 和 shallowRef</h6>
+<ul>
+<li>shallowReactive 只处理对象最外层的响应式（浅响应式）</li>
+<li>shallowRef 只处理基本数据类型的响应式，不进行对象的响应式处理</li>
+<li>什么时候用：
+<ol>
+<li>如果有一个对象结构，结构比较深，但变化时只是外层属性变化 ===&gt; shallowReactive</li>
+<li>如果有一个对象数据，后续功能不会修改该对象中的属性，而是生新的对象来替换 ===&gt; shallowRef</li>
+</ol>
+</li>
+</ul>
+<h6 id="652-readonly-和-shallowreadonly"><a class="anchor" href="#652-readonly-和-shallowreadonly">#</a> 6.5.2 readonly 和 shallowReadonly</h6>
+<ul>
+<li>readonly 让一个响应式数据为制度的（深只读）</li>
+<li>shallowReadonly 让一个响应式数据变为制度的（浅只读）</li>
+<li>应用场景：不希望数据被修改时</li>
+</ul>
+<h6 id="653-toraw-和-markraw"><a class="anchor" href="#653-toraw-和-markraw">#</a> 6.5.3 toRaw 和 markRaw</h6>
+<ul>
+<li>toRaw 将一个由 reactive 生成的响应式对象转为普通对象，用于读取响应式对应的普通对象，对这个普通对象的所有操作，不会引起页面更新</li>
+<li>markRaw 标记一个对象，使其永远不会在成为响应式对象，有些值不应被设置为响应式的，例如复杂的第三方类库，当渲染具有不可变数据的大列表时，跳过响应式转换可以提高性能</li>
+</ul>
+<h6 id="654-customref"><a class="anchor" href="#654-customref">#</a> 6.5.4 customRef</h6>
+<ul>
+<li>
+<p>作用：创建一个自定义的 ref，并对其依赖项跟踪和更新触发进行显示控制</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用自定义ref完成防抖函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myRef</span>(<span class="params">value,delay</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer</span><br><span class="line">    <span class="keyword">return</span> customRef(<span class="function">(<span class="params">track, trigger</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;	<span class="comment">// customRef要求返回一个对象</span></span><br><span class="line">            <span class="function"><span class="title">get</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">`有人修改了myRef这个容器中读取数据了，我把<span class="subst">$&#123;value&#125;</span>给他了`</span>)</span><br><span class="line">			   track() <span class="comment">// 通知Vue追踪value的变化（提前和get商量一下，让他认为这个value是有用的）</span></span><br><span class="line">                <span class="keyword">return</span> value</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="function"><span class="title">set</span>(<span class="params">newValue</span>)</span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">`有人把myRef这个容器中的数据改为了：<span class="subst">$&#123;newValue&#125;</span>`</span>)</span><br><span class="line">                <span class="built_in">clearTimeout</span>(timer)</span><br><span class="line">                timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">                    value = newValue</span><br><span class="line">                    trigger()	<span class="comment">// 通知Vue重新修改模板</span></span><br><span class="line">                &#125;, delay)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<h6 id="655-provide-与-inject"><a class="anchor" href="#655-provide-与-inject">#</a> 6.5.5 provide 与 inject</h6>
+<ul>
+<li>
+<p>作用：实现祖与后代组件通信（跨级组件）</p>
+</li>
+<li>
+<p>实现：父组件有一个 provide 选项来提供数据，后代组件有一个 indect 选项来开始使用这些数据</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父组件中</span></span><br><span class="line"><span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> car = reactive(&#123;<span class="attr">name</span>:<span class="string">&#x27;奔驰&#x27;</span>, <span class="attr">price</span>:<span class="string">&#x27;40&#x27;</span>&#125;)</span><br><span class="line">    provide(<span class="string">&#x27;car&#x27;</span>, car)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 后代组件中</span></span><br><span class="line"><span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> car = inject(<span class="string">&#x27;car&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> &#123; car &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<h6 id="656-响应式数据的判断"><a class="anchor" href="#656-响应式数据的判断">#</a> 6.5.6 响应式数据的判断</h6>
+<ul>
+<li>isRef：检查一个值是否为一个 Ref 对象</li>
+<li>isReactive：检查一个对象是否是由 reactive 创建的响应式代理</li>
+<li>isReadonly：检查一个对象是否由 readonly 创建的只读代理</li>
+<li>isProxy：检查一个对象是否是由 reactive 或者 readonly 方法创建代理</li>
+</ul>
+<h4 id="66-composition-api优势"><a class="anchor" href="#66-composition-api优势">#</a> 6.6 Composition API 优势</h4>
+<ul>
+<li>
+<p>Options API 存在的问题</p>
+<p>使用传统的 OptionsAPI 中，新增或者修改一个需求，就需要分别在 data，methods，computed 里修改</p>
+</li>
+<li>
+<p>Composition API 优势</p>
+<p>可以更加优雅的组织我们的代码，函数，让相关功能的代码更加有序的组织在一起</p>
+</li>
+</ul>
+<h4 id="67-新的组件"><a class="anchor" href="#67-新的组件">#</a> 6.7 新的组件</h4>
+<h6 id="671-tragment"><a class="anchor" href="#671-tragment">#</a> 6.7.1 Tragment</h6>
+<ul>
+<li>在 Vue2 中：组件必须有一个根标签</li>
+<li>在 Vue3 中：组件可以没有根标签，内部会将多个标签包含在一个 Fragment 虚拟元素中</li>
+<li>好处：减少标签层级，减小内存占用</li>
+</ul>
+<h6 id="672-teleport"><a class="anchor" href="#672-teleport">#</a> 6.7.2 Teleport</h6>
+<p>teleport 是一种能够将我们的组件 html 结构移动到制度位置的技术</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template to=&quot;移动位置&quot;&gt;</span><br><span class="line">	&lt;div v-if=&quot;isShow&quot; class=&quot;mask&quot;&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">        	&lt;h3&gt;我是一个弹窗&lt;/h3&gt;</span><br><span class="line">            &lt;button @click=&quot;isShow = false&quot;&gt;关闭弹窗&lt;/button&gt;</span><br><span class="line">    	&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<h6 id="673-suspense实验阶段"><a class="anchor" href="#673-suspense实验阶段">#</a> 6.7.3 Suspense（实验阶段）</h6>
+<ul>
+<li>
+<p>等待异步组件渲染一些额外内容，让应用有更好的用户体验</p>
+</li>
+<li>
+<p>使用：</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 异步引入组件</span></span><br><span class="line"><span class="keyword">import</span> &#123;defineAsyncComponent&#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">const</span> Child = defineAsyncComponent(<span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;./components/Child.vue&#x27;</span>))	<span class="comment">// 动态引入组件</span></span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--使用Suspense包裹组件，并配置好defalut与fallback--&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div class=&quot;app&quot;&gt;</span><br><span class="line">        &lt;h3&gt;我是APP组件&lt;/h3&gt;</span><br><span class="line">        &lt;Suspense&gt;</span><br><span class="line">    		&lt;template v-slot:defalut&gt;</span><br><span class="line">				&lt;Child /&gt;</span><br><span class="line">			&lt;/template&gt;</span><br><span class="line">			&lt;template&gt;</span><br><span class="line">				&lt;h3&gt;加载中.....&lt;/h3&gt;</span><br><span class="line">			&lt;/template&gt;</span><br><span class="line">    	&lt;/Suspense&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<h4 id="68-其他变化"><a class="anchor" href="#68-其他变化">#</a> 6.8 其他变化</h4>
+<ul>
+<li>
+<p>全局 API 的转移</p>
+<table>
+<thead>
+<tr>
+<th>2.x 全局 API（Vue）</th>
+<th>3.x 实例 API （app）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="exturl" data-url="aHR0cDovL1Z1ZS5jb25maWcueHh4">Vue.config.xxx</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2FwcC5jb25maWcueHh4">app.config.xxx</span></td>
+</tr>
+<tr>
+<td>Vue.config.production.Tip</td>
+<td>移除</td>
+</tr>
+<tr>
+<td>Vue.component</td>
+<td>app.component</td>
+</tr>
+<tr>
+<td>Vue.directive</td>
+<td>app.directive</td>
+</tr>
+<tr>
+<td>Vue.mixin</td>
+<td>app.mixin</td>
+</tr>
+<tr>
+<td>Vue.use</td>
+<td>app.use</td>
+</tr>
+<tr>
+<td>Vue.prototype</td>
+<td>app.config.globalProperties</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>data 选项应始终声明为一个函数</p>
+</li>
+<li>
+<p>过度类名更改：v-enter 和 v-leave 改为 v-enter-from 和 v-leave-enter</p>
+</li>
+<li>
+<p>移除 keyCode 作为 v-on 的修饰符，同时也不在支持 config.keyCodes</p>
+</li>
+<li>
+<p>移除 v-on:native 修饰符</p>
+<ul>
+<li>
+<p>父组件中绑定事件</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-component </span><br><span class="line">	v-on:close=&quot;handleComponentEvent&quot;</span><br><span class="line">    v-on:click=&quot;handleNativeClickEvent&quot;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>子组件中声明自定义事件</p>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="attr">emit</span>: [<span class="string">&#x27;close&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+</li>
+<li>
+<p>移除过滤器 filter</p>
+<p>过滤器虽然看起来方便，但他需要一个自定义的语法，打破了大括号内表达式只是 js 表达式的假设，学习成本高，建议用计算属性或者方法调用来替换过滤器</p>
+</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/%E5%89%8D%E7%AB%AF-vue/" rel="tag"><i class="ic i-tag"></i> 前端 vue</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-08-01 11:10:34" itemprop="dateModified" datetime="2021-08-01T11:10:34+08:00">2021-08-01</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="10nlife 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="10nlife 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="10nlife 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>10nlife <i class="ic i-at"><em>@</em></i>大大大大前端
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://10nlife.github.io/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-5/" title="vue全家桶知识嗷[5]">https://10nlife.github.io/2021/07/31/vue/vue全家桶知识嗷-5/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-4/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipex2cdtbj20zk0m8x6p.jpg" title="vue全家桶知识嗷[4]">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> vue</span>
+  <h3>vue全家桶知识嗷[4]</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2021/07/31/webpack/webpack%E7%9F%A5%E8%AF%86%E5%97%B7/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipev1x5e4j20zk0m8b29.jpg" title="webpack知识嗷">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> webpack</span>
+  <h3>webpack知识嗷</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-vue3"><span class="toc-number">1.</span> <span class="toc-text"> 6. Vue3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#61-vue3%E5%B8%A6%E6%9D%A5%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 6.1 Vue3 带来了什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#62-%E5%88%9B%E5%BB%BAvue30%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 6.2 创建 Vue3.0 工程</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#621-%E4%BD%BF%E7%94%A8vue-cil%E5%88%9B%E5%BB%BA"><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text"> 6.2.1 使用 vue-cil 创建</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#622-%E4%BD%BF%E7%94%A8vite%E5%88%9B%E5%BB%BA"><span class="toc-number">1.0.2.0.2.</span> <span class="toc-text"> 6.2.2 使用 vite 创建</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#63-%E5%88%86%E6%9E%90%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E6%94%B9%E5%8F%98"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 6.3 分析工程结构 (改变)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#64-%E5%B8%B8%E7%94%A8%E7%9A%84composition-api"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 6.4 常用的 Composition API</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#641-%E6%8B%89%E5%BC%80%E5%BA%8F%E5%B9%95%E7%9A%84setup"><span class="toc-number">1.0.4.0.1.</span> <span class="toc-text"> 6.4.1 拉开序幕的 setup</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#642-ref%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.4.0.2.</span> <span class="toc-text"> 6.4.2 ref 函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#643-reactive%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.4.0.3.</span> <span class="toc-text"> 6.4.3 reactive 函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#643-4-reactive%E5%AF%B9%E6%AF%94ref"><span class="toc-number">1.0.4.0.4.</span> <span class="toc-text"> 6.4.3-4 reactive 对比 ref</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#644-vue3%E4%B8%AD%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86"><span class="toc-number">1.0.5.</span> <span class="toc-text"> 6.4.4 Vue3 中的响应式原理</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#645-setup%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA%E5%92%8C%E5%8F%82%E6%95%B0"><span class="toc-number">1.0.5.0.1.</span> <span class="toc-text"> 6.4.5 setup 执行时机和参数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#646-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%92%8C%E7%9B%91%E8%A7%86"><span class="toc-number">1.0.5.0.2.</span> <span class="toc-text"> 6.4.6 计算属性和监视</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#647-watcheffect%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.5.0.3.</span> <span class="toc-text"> 6.4.7 watchEffect 函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#648-vue3%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.0.5.0.4.</span> <span class="toc-text"> 6.4.8 Vue3 的生命周期</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#649-%E8%87%AA%E5%AE%9A%E4%B9%89hook%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.5.0.5.</span> <span class="toc-text"> 6.4.9 自定义 hook 函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6410-toref"><span class="toc-number">1.0.5.0.6.</span> <span class="toc-text"> 6.4.10 toRef</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#65-%E5%85%B6%E4%BB%96composition-api"><span class="toc-number">1.0.6.</span> <span class="toc-text"> 6.5  其他 composition API</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#651-shallowreactive-%E5%92%8C-shallowref"><span class="toc-number">1.0.6.0.1.</span> <span class="toc-text"> 6.5.1 shallowReactive 和 shallowRef</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#652-readonly-%E5%92%8C-shallowreadonly"><span class="toc-number">1.0.6.0.2.</span> <span class="toc-text"> 6.5.2 readonly 和 shallowReadonly</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#653-toraw-%E5%92%8C-markraw"><span class="toc-number">1.0.6.0.3.</span> <span class="toc-text"> 6.5.3 toRaw 和 markRaw</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#654-customref"><span class="toc-number">1.0.6.0.4.</span> <span class="toc-text"> 6.5.4 customRef</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#655-provide-%E4%B8%8E-inject"><span class="toc-number">1.0.6.0.5.</span> <span class="toc-text"> 6.5.5 provide 与 inject</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#656-%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E5%88%A4%E6%96%AD"><span class="toc-number">1.0.6.0.6.</span> <span class="toc-text"> 6.5.6 响应式数据的判断</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#66-composition-api%E4%BC%98%E5%8A%BF"><span class="toc-number">1.0.7.</span> <span class="toc-text"> 6.6 Composition API 优势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#67-%E6%96%B0%E7%9A%84%E7%BB%84%E4%BB%B6"><span class="toc-number">1.0.8.</span> <span class="toc-text"> 6.7 新的组件</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#671-tragment"><span class="toc-number">1.0.8.0.1.</span> <span class="toc-text"> 6.7.1 Tragment</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#672-teleport"><span class="toc-number">1.0.8.0.2.</span> <span class="toc-text"> 6.7.2 Teleport</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#673-suspense%E5%AE%9E%E9%AA%8C%E9%98%B6%E6%AE%B5"><span class="toc-number">1.0.8.0.3.</span> <span class="toc-text"> 6.7.3 Suspense（实验阶段）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#68-%E5%85%B6%E4%BB%96%E5%8F%98%E5%8C%96"><span class="toc-number">1.0.9.</span> <span class="toc-text"> 6.8 其他变化</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-0/" rel="bookmark" title="vue全家桶知识嗷[0]">vue全家桶知识嗷[0]</a></li><li><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-1/" rel="bookmark" title="vue全家桶知识嗷[1]">vue全家桶知识嗷[1]</a></li><li><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-2/" rel="bookmark" title="vue全家桶知识嗷[2]">vue全家桶知识嗷[2]</a></li><li><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-3/" rel="bookmark" title="vue全家桶知识嗷[3]">vue全家桶知识嗷[3]</a></li><li><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-4/" rel="bookmark" title="vue全家桶知识嗷[4]">vue全家桶知识嗷[4]</a></li><li class="active"><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-5/" rel="bookmark" title="vue全家桶知识嗷[5]">vue全家桶知识嗷[5]</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="10nlife"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">10nlife</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">10</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">5</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-4/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2021/07/31/webpack/webpack%E7%9F%A5%E8%AF%86%E5%97%B7/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/javascript/" title="分类于 javascript">javascript</a>
+</div>
+
+    <span><a href="/2021/07/31/javascript/ES6-11%E7%9F%A5%E8%AF%86%E5%97%B7/" title="ES6-11知识嗷">ES6-11知识嗷</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-3/" title="vue全家桶知识嗷[3]">vue全家桶知识嗷[3]</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/node/" title="分类于 node">node</a>
+</div>
+
+    <span><a href="/2021/07/31/node/node-js%E7%9F%A5%E8%AF%86%E7%AE%80%E6%98%93%E7%89%88%E5%97%B7/" title="node.js知识简易版嗷">node.js知识简易版嗷</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-0/" title="vue全家桶知识嗷[0]">vue全家桶知识嗷[0]</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/webpack/" title="分类于 webpack">webpack</a>
+</div>
+
+    <span><a href="/2021/07/31/webpack/webpack%E7%9F%A5%E8%AF%86%E5%97%B7/" title="webpack知识嗷">webpack知识嗷</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-4/" title="vue全家桶知识嗷[4]">vue全家桶知识嗷[4]</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-5/" title="vue全家桶知识嗷[5]">vue全家桶知识嗷[5]</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/base/" title="分类于 计算机基础">计算机基础</a>
+</div>
+
+    <span><a href="/2021/07/31/base/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E5%97%B7/" title="计算机网络">计算机网络</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-2/" title="vue全家桶知识嗷[2]">vue全家桶知识嗷[2]</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/vue/" title="分类于 vue">vue</a>
+</div>
+
+    <span><a href="/2021/07/31/vue/vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E7%9F%A5%E8%AF%86%E5%97%B7-1/" title="vue全家桶知识嗷[1]">vue全家桶知识嗷[1]</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">10nlife @ 大大大大前端</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/07/31/vue/vue全家桶知识嗷-5/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

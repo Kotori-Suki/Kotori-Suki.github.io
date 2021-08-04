@@ -1,9 +1,11 @@
 .v.wrap {
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
   opacity: 0;
 }
 .v .lozaded {
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
 }
 .v input,
 .v textarea {
@@ -147,7 +149,8 @@
   width: 2.8rem;
   height: 2.8rem;
   background: var(--grey-2);
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .v .form .btn {
   cursor: pointer;
@@ -235,7 +238,8 @@
   padding: 0.125em;
 }
 .v .item:hover .avatar {
-  animation: 0.8s ease-out 0s 1 normal both running shake;
+  -webkit-animation: 0.8s ease-out 0s 1 normal both running shake;
+          animation: 0.8s ease-out 0s 1 normal both running shake;
 }
 .v .item .main {
   overflow: hidden;
@@ -361,37 +365,26 @@
   width: 6px;
   margin-right: 3px;
   display: inline-block;
-  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+          animation: sk-stretchdelay 1.2s infinite ease-in-out;
 }
 .v .spinner .r2 {
-  animation-delay: -1.1s;
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s;
 }
 .v .spinner .r3 {
-  animation-delay: -1s;
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s;
 }
 .v .spinner .r4 {
-  animation-delay: -0.9s;
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s;
 }
 .v .spinner .r5 {
-  animation-delay: -0.8s;
-}
-@-moz-keyframes sk-stretchdelay {
-  0%, 40%, 100% {
-    transform: scaleY(0.4);
-  }
-  20% {
-    transform: scaleY(1);
-  }
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
 }
 @-webkit-keyframes sk-stretchdelay {
-  0%, 40%, 100% {
-    transform: scaleY(0.4);
-  }
-  20% {
-    transform: scaleY(1);
-  }
-}
-@-o-keyframes sk-stretchdelay {
   0%, 40%, 100% {
     transform: scaleY(0.4);
   }
